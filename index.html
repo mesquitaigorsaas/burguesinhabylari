@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burguesinha by Larissa Lopes</title>
+<meta name="description" content="Moda feminina com propósito em Alfenas/MG. Estilo, sofisticação e identidade. Compre online em até 12x.">
+<meta property="og:title" content="Burguesinha by Larissa Lopes · Seja Burguesinha">
+<meta property="og:description" content="Moda com propósito: estilo, sofisticação e identidade. Compre online em até 12x no cartão.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#2B2424">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #FBF3EF;
+    --surface: #FFFAF7;
+    --ink: #2B2424;
+    --muted: #7A5F5B;
+    --line: #EBD8D0;
+    --taupe: #D9A99A;
+    --taupe-soft: #F1D9D0;
+    --butter: #DDB04A;
+    --btn: #2B2424;
+    --btn-ink: #FBF3EF;
+    --noir: #2B2424;
+    --noir-ink: #FBF3EF;
+    --noir-muted: #C9AFA9;
+    --shadow: 0 18px 40px -22px rgba(21, 18, 17, .45);
+    --display: "Gloock", "Didot", Georgia, serif;
+    --body: "Manrope", "Segoe UI", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1C1717; --surface: #262020; --ink: #F7ECE7; --muted: #CDB3AD;
+      --line: #3E3232; --taupe: #D2A597; --taupe-soft: #4E3B3A; --butter: #DDB04A;
+      --btn: #F7ECE7; --btn-ink: #1C1717; --noir: #120E0E; --noir-ink: #F7ECE7; --noir-muted: #C9AFA9;
+      --shadow: 0 18px 40px -22px rgba(0, 0, 0, .8);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1C1717; --surface: #262020; --ink: #F7ECE7; --muted: #CDB3AD;
+    --line: #3E3232; --taupe: #D2A597; --taupe-soft: #4E3B3A; --butter: #DDB04A;
+    --btn: #F7ECE7; --btn-ink: #1C1717; --noir: #120E0E; --noir-ink: #F7ECE7; --noir-muted: #C9AFA9;
+    --shadow: 0 18px 40px -22px rgba(0, 0, 0, .8);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; }
+  img { max-width: 100%; }
+  :focus-visible { outline: 2px solid var(--taupe); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 1200px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 48px); }
+  h1, h2, h3 { font-family: var(--display); font-weight: 400; line-height: 1.05; margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+  h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+  p { margin: 0; }
+  .label { font-size: .72rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--muted); }
+  .lede { color: var(--muted); font-size: 1.1rem; max-width: 54ch; }
+  .hl { background: linear-gradient(transparent 60%, var(--butter) 60%, var(--butter) 92%, transparent 92%); -webkit-box-decoration-break: clone; box-decoration-break: clone; padding-inline: .06em; color: var(--ink); }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: .55em; font: 700 .9rem/1 var(--body); letter-spacing: .04em; text-decoration: none; padding: 1.1em 1.7em; border-radius: 999px; border: 1.5px solid transparent; cursor: pointer; transition: transform .2s ease, background-color .2s ease, color .2s ease; }
+  .btn-solid { background: var(--btn); color: var(--btn-ink); }
+  .btn-solid:hover { transform: translateY(-2px); }
+  .btn-line { border-color: var(--ink); color: var(--ink); }
+  .btn-line:hover { background: var(--ink); color: var(--bg); }
+  .btn-butter { background: var(--butter); color: #2B2424; }
+  .btn-butter:hover { transform: translateY(-2px); }
+  .btn .arr { transition: transform .2s ease; }
+  .btn:hover .arr { transform: translateX(4px); }
+
+  /* Ribbon + header */
+  .ribbon { background: var(--noir); color: var(--noir-ink); font-size: .78rem; font-weight: 600; letter-spacing: .06em; }
+  .ribbon .wrap { display: flex; justify-content: center; gap: .3rem 1.4rem; flex-wrap: wrap; padding-block: .55rem; }
+  .ribbon b { color: var(--butter); font-weight: 700; }
+  header.site { position: sticky; top: 0; z-index: 20; background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .8rem; }
+  .brand { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; }
+  .brand img { height: 52px; width: auto; }
+  .brand img + span { display: none; }
+  .brand span { font-family: var(--display); font-size: 1.55rem; line-height: 1; }
+  .brand small { display: block; font-family: var(--body); font-size: .6rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-top: .2rem; }
+  nav.links { display: flex; gap: 1.8rem; font-size: .9rem; font-weight: 600; }
+  nav.links a { text-decoration: none; color: var(--muted); }
+  nav.links a:hover { color: var(--ink); }
+  header .btn { padding: .85em 1.3em; font-size: .82rem; }
+
+  /* Hero */
+  .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-block: clamp(3rem, 7vw, 5.5rem); }
+  .hero h1 { font-size: clamp(2.9rem, 6.4vw, 5.4rem); margin-block: 1rem 1.4rem; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+  .facts { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 2.2rem; list-style: none; padding: 0; }
+  .facts li { font-size: .85rem; font-weight: 600; padding: .5em .95em; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+
+  .medal-wrap { position: relative; justify-self: center; width: min(100%, 440px); aspect-ratio: 1; }
+  .medal { position: absolute; inset: 6%; border-radius: 50%; background: #2B2424; color: #FBF3EF; display: grid; place-items: center; box-shadow: var(--shadow); outline: 1px solid var(--taupe); outline-offset: 10px; }
+  .medal .ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 40s linear infinite; }
+  .medal .ring text { fill: #F1D9D0; font: 700 9.5px var(--body); letter-spacing: 2.6px; }
+  .medal .core { text-align: center; display: grid; gap: .2rem; justify-items: center; }
+  .medal .core .medal-logo { width: 64%; height: auto; }
+  .medal .core .medal-logo ~ * { display: none; }
+  .medal .core b { font-family: var(--display); font-weight: 400; font-size: clamp(4.5rem, 11vw, 7.5rem); line-height: .9; }
+  .medal .core span { font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2rem); }
+  .medal .core small { font-size: .62rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: #C9AFA9; }
+  .sticker { position: absolute; right: 0; top: 8%; width: 118px; aspect-ratio: 1; border-radius: 50%; background: var(--butter); color: #2B2424; display: grid; place-items: center; text-align: center; font-weight: 700; font-size: .78rem; line-height: 1.2; transform: rotate(12deg); box-shadow: var(--shadow); padding: 1rem; }
+  .sticker b { display: block; font-family: var(--display); font-weight: 400; font-size: 1.6rem; line-height: 1; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  section.block { padding-block: clamp(4rem, 8vw, 6.5rem); }
+  .head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 1.2rem 2rem; margin-bottom: 3rem; }
+  .head > div { display: grid; gap: .8rem; max-width: 680px; }
+
+  /* Hang tags */
+  .tags { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2.5vw, 2rem); padding-top: 2.5rem; }
+  .tag { position: relative; display: grid; gap: .5rem; align-content: start; text-decoration: none; color: #2B2424; background: #F1D9D0; border-radius: 14px 14px 10px 10px; padding: 3.2rem 1.4rem 1.5rem; transform: rotate(var(--r, 0deg)); transform-origin: 50% -2.5rem; transition: transform .35s ease; }
+  .tag:nth-child(1) { --r: -2deg; }
+  .tag:nth-child(2) { --r: 1.5deg; background: #2B2424; color: #FBF3EF; }
+  .tag:nth-child(3) { --r: -1deg; background: var(--butter); }
+  .tag:nth-child(4) { --r: 2deg; background: var(--taupe); color: #2B2424; }
+  .tag:hover { transform: rotate(0deg) translateY(-4px); }
+  .tag::before { content: ""; position: absolute; top: 1.1rem; left: 50%; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 1px 2px rgba(0,0,0,.25); }
+  .tag::after { content: ""; position: absolute; left: 50%; bottom: calc(100% - 1.6rem); width: 1.5px; height: 3.2rem; background: var(--taupe); }
+  .tag .kind { font-size: .68rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; opacity: .7; }
+  .tag h3 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+  .tag .price { font-family: var(--display); font-size: 1.6rem; font-variant-numeric: tabular-nums; margin-top: .8rem; padding-top: .8rem; border-top: 1px dashed currentColor; }
+  .tag .inst { font-size: .8rem; opacity: .75; }
+  .tag .go { margin-top: .8rem; font-size: .82rem; font-weight: 700; }
+
+  /* Occasion finder */
+  .finder-band { background: var(--noir); color: var(--noir-ink); }
+  .finder-band .label { color: var(--noir-muted); }
+  .finder-band .lede { color: var(--noir-muted); }
+  .finder { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
+  .finder h2 .hl { color: #2B2424; }
+  .chips { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-top: 2rem; }
+  .chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .chip span { display: grid; gap: .15rem; padding: 1rem 1.1rem; border-radius: 14px; border: 1.5px solid #4A3D3C; cursor: pointer; transition: border-color .2s, background-color .2s, color .2s; }
+  .chip span b { font-family: var(--display); font-weight: 400; font-size: 1.35rem; line-height: 1.1; }
+  .chip span small { font-size: .8rem; color: var(--noir-muted); }
+  .chip span:hover { border-color: var(--taupe); }
+  .chip input:checked + span { background: var(--butter); border-color: var(--butter); color: #2B2424; }
+  .chip input:checked + span small { color: #5A4643; }
+  .chip input:focus-visible + span { outline: 2px solid var(--butter); outline-offset: 3px; }
+  .look { background: #FBF3EF; color: #2B2424; border-radius: 20px; padding: clamp(1.5rem, 3vw, 2.4rem); display: grid; gap: 1.2rem; }
+  .look .label { color: #7A5F5B; }
+  .look h3 { font-size: clamp(2rem, 4vw, 2.8rem); }
+  .look p { color: #5A4643; }
+  .look ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid #EBD8D0; }
+  .look li a { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid #EBD8D0; text-decoration: none; font-weight: 600; }
+  .look li a:hover { color: #7A5F5B; }
+  .look li a span { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #7A5F5B; }
+  .look .pick { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; background: #F1D9D0; border-radius: 12px; padding: .9rem 1.1rem; }
+  .look .pick b { font-family: var(--display); font-weight: 400; font-size: 1.3rem; }
+  .look .pick[hidden] { display: none; }
+  .look .btn-solid { background: #2B2424; color: #FBF3EF; }
+
+  /* Category index */
+  .index { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--ink); }
+  .index a { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 1rem; padding: 1.1rem .4rem; border-bottom: 1px solid var(--line); text-decoration: none; transition: background-color .25s ease, padding .25s ease; }
+  .index a h3 { font-size: clamp(1.7rem, 4vw, 2.8rem); }
+  .index a span { font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); display: inline-flex; gap: .5rem; align-items: center; }
+  .index a:hover { background: var(--taupe-soft); padding-inline: 1.2rem; }
+  .index a:hover span { color: var(--ink); }
+
+  /* Manifesto */
+  .manifesto { background: var(--taupe); color: #2B2424; }
+  .manifesto .wrap { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-block: clamp(4rem, 8vw, 6rem); }
+  .manifesto .label { color: #3A2C2B; }
+  .manifesto h2 { font-size: clamp(2.4rem, 5.6vw, 4.4rem); margin-top: .8rem; }
+  .manifesto p { max-width: 50ch; margin-top: 1.2rem; color: #3A2C2B; font-size: 1.05rem; }
+  .highlights { display: flex; flex-wrap: wrap; gap: .6rem; }
+  .highlights a { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; background: #FBF3EF; color: #2B2424; border-radius: 999px; padding: .65em 1.1em; font-weight: 600; font-size: .9rem; transition: background-color .2s; }
+  .highlights a::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--butter); box-shadow: 0 0 0 1.5px #2B2424; }
+  .highlights a:hover { background: var(--butter); }
+  .manifesto .btn-solid { background: #2B2424; color: #FBF3EF; margin-top: 1.6rem; }
+
+  /* How to buy */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; counter-reset: s; }
+  .steps li { counter-increment: s; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 1.8rem; display: grid; gap: .6rem; align-content: start; }
+  .steps li::before { content: counter(s); font-family: var(--display); font-size: 1.4rem; width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center; background: var(--butter); color: #2B2424; }
+  .steps h3 { font-size: 1.6rem; }
+  .steps p { color: var(--muted); }
+
+  /* FAQ */
+  .faq-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 6vw, 5rem); align-items: start; }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq details:first-child { border-top: 1.5px solid var(--ink); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.2rem; font-weight: 700; font-size: 1.05rem; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; flex: none; width: 1.8rem; height: 1.8rem; border-radius: 50%; display: grid; place-items: center; background: var(--taupe-soft); color: var(--ink); font-weight: 500; transition: transform .25s, background-color .25s; }
+  .faq details[open] summary::after { transform: rotate(45deg); background: var(--butter); color: #2B2424; }
+  .faq details p { color: var(--muted); padding-bottom: 1.3rem; max-width: 60ch; }
+
+  /* Final CTA */
+  .final { background: var(--noir); color: var(--noir-ink); }
+  .final .wrap { display: grid; justify-items: center; text-align: center; gap: 1.3rem; padding-block: clamp(4rem, 9vw, 6.5rem); }
+  .final .label { color: var(--noir-muted); }
+  .final h2 { font-size: clamp(2.8rem, 7vw, 5.4rem); }
+  .final h2 .hl { color: #2B2424; }
+  .final p { color: var(--noir-muted); max-width: 46ch; }
+  .final .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: .5rem; }
+  .final .btn-line { border-color: var(--noir-ink); color: var(--noir-ink); }
+  .final .btn-line:hover { background: var(--noir-ink); color: var(--noir); }
+
+  /* Footer */
+  footer { background: var(--surface); border-top: 1px solid var(--line); padding-block: 2.5rem; font-size: .84rem; color: var(--muted); }
+  footer .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem 2rem; }
+  .foot-brand { display: flex; align-items: center; gap: .9rem; }
+  .foot-brand img { height: 64px; width: auto; }
+  .foot-brand img + div strong { display: none; }
+  .foot-brand div { display: grid; gap: .1rem; }
+  .foot-brand strong { font-family: var(--display); font-weight: 400; font-size: 1.35rem; color: var(--ink); }
+  .foot-ig { display: inline-flex; align-items: center; gap: .6rem; color: var(--ink); text-decoration: none; font-family: var(--display); font-size: 1.3rem; }
+  .foot-ig svg { flex: none; color: var(--taupe); transition: transform .2s ease; }
+  .foot-ig:hover span { text-decoration: underline; text-decoration-color: var(--butter); text-decoration-thickness: 3px; text-underline-offset: 4px; }
+  .foot-ig:hover svg { transform: scale(1.08); }
+  .foot-legal { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: .3rem 0; padding-top: 1.2rem; border-top: 1px solid var(--line); }
+  .foot-legal > * + *::before { content: "·"; margin-inline: .7em; color: var(--taupe); }
+
+  @media (max-width: 960px) {
+    nav.links { display: none; }
+    .hero .wrap, .finder, .manifesto .wrap, .faq-grid { grid-template-columns: 1fr; }
+    .medal-wrap { width: min(100%, 360px); }
+    .tags { grid-template-columns: repeat(2, 1fr); row-gap: 3.5rem; }
+    .steps { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    body { font-size: 16px; }
+    header .btn { display: none; }
+    .ribbon .wrap span:nth-child(2) { display: none; }
+    .chips { grid-template-columns: 1fr; }
+    .tags { gap: 1rem; row-gap: 3.5rem; }
+    .tag { padding: 3rem 1rem 1.2rem; }
+    .sticker { width: 96px; font-size: .68rem; }
+    .sticker b { font-size: 1.3rem; }
+    .index a { grid-template-columns: 1fr; gap: .2rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .medal .ring { animation: none; }
+    * { transition-duration: 0s !important; }
+  }
+</style>
+</head>
+<body>
+<div class="ribbon">
+  <div class="wrap">
+    <span><b>Loja online aberta</b></span>
+    <span>Em até 12x no cartão</span>
+    <span>Alfenas · MG</span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Burguesinha by Larissa Lopes">
+      <img src="assets/logo.png" alt="" onerror="this.remove()">
+      <span>Burguesinha<small>by Larissa Lopes</small></span>
+    </a>
+    <nav class="links" aria-label="Seções">
+      <a href="#vitrine">Vitrine</a>
+      <a href="#provador">Provador</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#bgirls">B.Girls</a>
+    </nav>
+    <a class="btn btn-solid" href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/" target="_blank" rel="noopener">Comprar online</a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="label">Moda com propósito · por Larissa Lopes</span>
+        <h1>Estilo, sofisticação e identidade. Seja <span class="hl">Burguesinha.</span></h1>
+        <p class="lede">Peças escolhidas a dedo pela Lari para a mulher que se veste com intenção. Do trabalho ao jantar, você encontra o look certo e compra sem sair de casa.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/" target="_blank" rel="noopener">Ver a loja online <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-line js-talk" href="https://ig.me/m/burguesinhabylari" target="_blank" rel="noopener">Falar com a Lari</a>
+        </div>
+        <ul class="facts">
+          <li>Macacões, vestidos e conjuntos</li>
+          <li>Até 12x no cartão</li>
+          <li>Frete calculado pelo CEP</li>
+        </ul>
+      </div>
+
+      <div class="medal-wrap" aria-hidden="true">
+        <div class="medal">
+          <svg class="ring" viewBox="0 0 200 200">
+            <defs><path id="circle" d="M100,100 m-84,0 a84,84 0 1,1 168,0 a84,84 0 1,1 -168,0"></path></defs>
+            <text><textPath href="#circle" textLength="524" lengthAdjust="spacing">SEJA BURGUESINHA ✦ MODA COM PROPÓSITO ✦ </textPath></text>
+          </svg>
+          <div class="core">
+            <img class="medal-logo" src="assets/logo.png" alt="" onerror="this.remove()">
+            <b>BG</b>
+            <span>Burguesinha</span>
+            <small>by Larissa Lopes</small>
+          </div>
+        </div>
+        <div class="sticker"><div><b>12x</b>no cartão</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="vitrine">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="label">Destaques da vitrine</span>
+          <h2>Direto da arara para o <span class="hl">seu carrinho.</span></h2>
+        </div>
+        <a class="btn btn-line" href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/produtos/" target="_blank" rel="noopener">Ver todos os produtos <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+      <div class="tags">
+        <a class="tag" href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/produtos/aurora/" target="_blank" rel="noopener">
+          <span class="kind">Destaque</span>
+          <h3>Aurora</h3>
+          <span class="price">R$ 70,00</span>
+          <span class="inst">em até 12x no cartão</span>
+          <span class="go">Comprar →</span>
+        </a>
+        <a class="tag" href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/produtos/serena/" target="_blank" rel="noopener">
+          <span class="kind">Destaque</span>
+          <h3>Serena</h3>
+          <span class="price">R$ 180,00</span>
+          <span class="inst">em até 12x no cartão</span>
+          <span class="go">Comprar →</span>
+        </a>
+        <a class="tag" href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/produtos/conjunto-clara/" target="_blank" rel="noopener">
+          <span class="kind">Conjunto</span>
+          <h3>Clara</h3>
+          <span class="price">R$ 180,00</span>
+          <span class="inst">em até 12x no cartão</span>
+          <span class="go">Comprar →</span>
+        </a>
+        <a class="tag" href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/produtos/macacao-elisa/" target="_blank" rel="noopener">
+          <span class="kind">Macacão</span>
+          <h3>Elisa</h3>
+          <span class="price">R$ 150,00</span>
+          <span class="inst">12x de R$ 14,80</span>
+          <span class="go">Comprar →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block finder-band" id="provador">
+    <div class="wrap finder">
+      <div>
+        <span class="label">Provador da ocasião</span>
+        <h2 style="margin-top:.8rem">Aonde você vai <span class="hl">de Burguesinha?</span></h2>
+        <p class="lede" style="margin-top:1rem">Escolha o momento e a gente separa o que vestir.</p>
+        <form class="chips" id="finder" onsubmit="return false">
+          <label class="chip"><input type="radio" name="ocasiao" id="oc-trabalho" value="trabalho" checked><span><b>Trabalho</b><small>elegante sem esforço</small></span></label>
+          <label class="chip"><input type="radio" name="ocasiao" id="oc-jantar" value="jantar"><span><b>Jantar a dois</b><small>charme na medida</small></span></label>
+          <label class="chip"><input type="radio" name="ocasiao" id="oc-passeio" value="passeio"><span><b>Fim de semana</b><small>leve e cheia de estilo</small></span></label>
+          <label class="chip"><input type="radio" name="ocasiao" id="oc-evento" value="evento"><span><b>Evento</b><small>para ser lembrada</small></span></label>
+        </form>
+      </div>
+
+      <div class="look" aria-live="polite">
+        <span class="label" id="look-label">Seu look para o trabalho</span>
+        <h3 id="look-title">Alfaiataria que fala por você.</h3>
+        <p id="look-text">Conjuntos coordenados e calças de caimento impecável, com uma parte de cima que muda o look da reunião para o happy hour.</p>
+        <ul id="look-list"></ul>
+        <div class="pick" id="look-pick">
+          <div><span class="label">Sugestão da vitrine</span><br><b id="pick-name">Conjunto Clara · R$ 180,00</b></div>
+          <a class="btn btn-solid" id="pick-link" href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/produtos/conjunto-clara/" target="_blank" rel="noopener">Ver peça <span class="arr" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="categorias">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="label">Categorias</span>
+          <h2>Tudo o que a Lari <span class="hl">escolheu para você.</span></h2>
+        </div>
+      </div>
+      <ul class="index">
+        <li><a href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/macacoes/" target="_blank" rel="noopener"><h3>Macacões</h3><span>Ver peças →</span></a></li>
+        <li><a href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/vestidos/" target="_blank" rel="noopener"><h3>Vestidos</h3><span>Ver peças →</span></a></li>
+        <li><a href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/conjuntos/" target="_blank" rel="noopener"><h3>Conjuntos</h3><span>Ver peças →</span></a></li>
+        <li><a href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/parte-de-cima/" target="_blank" rel="noopener"><h3>Parte de cima</h3><span>Ver peças →</span></a></li>
+        <li><a href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/calcas/" target="_blank" rel="noopener"><h3>Calças</h3><span>Ver peças →</span></a></li>
+        <li><a href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/bermudas-e-saias/" target="_blank" rel="noopener"><h3>Bermudas e saias</h3><span>Ver peças →</span></a></li>
+        <li><a href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/lencos/" target="_blank" rel="noopener"><h3>Lenços e acessórios</h3><span>Ver peças →</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="manifesto" id="bgirls">
+    <div class="wrap">
+      <div>
+        <span class="label">Clube B.Girls</span>
+        <h2>Moda com propósito.</h2>
+        <p>Ser Burguesinha é escolher peças que contam quem você é. No Instagram, a Lari mostra os provadores, os looks montados e a palavra do dia para começar com estilo.</p>
+        <a class="btn btn-solid" href="https://www.instagram.com/burguesinhabylari/" target="_blank" rel="noopener">Seguir @burguesinhabylari <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+      <div class="highlights" aria-label="Destaques do Instagram">
+        <a href="https://www.instagram.com/burguesinhabylari/" target="_blank" rel="noopener">B.Girls</a>
+        <a href="https://www.instagram.com/burguesinhabylari/" target="_blank" rel="noopener">Provadores</a>
+        <a href="https://www.instagram.com/burguesinhabylari/" target="_blank" rel="noopener">Looks BG.</a>
+        <a href="https://www.instagram.com/burguesinhabylari/" target="_blank" rel="noopener">Palavra do Dia</a>
+        <a href="https://www.instagram.com/burguesinhabylari/" target="_blank" rel="noopener">Novidades</a>
+        <a href="https://www.instagram.com/burguesinhabylari/" target="_blank" rel="noopener">Vitrines</a>
+        <a href="https://www.instagram.com/burguesinhabylari/" target="_blank" rel="noopener">Acessórios</a>
+        <a href="https://www.instagram.com/burguesinhabylari/" target="_blank" rel="noopener">Infantil</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="label">Como comprar</span>
+          <h2>Seu look em casa em <span class="hl">três passos.</span></h2>
+        </div>
+      </div>
+      <ol class="steps">
+        <li><h3>Escolha</h3><p>Navegue pela loja online e escolha a peça e o tamanho.</p></li>
+        <li><h3>Calcule o frete</h3><p>Digite seu CEP no produto para ver o prazo e o valor da entrega.</p></li>
+        <li><h3>Finalize</h3><p>Pague com segurança em até 12x no cartão e acompanhe o pedido.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="wrap faq-grid">
+      <div class="head" style="margin:0">
+        <div>
+          <span class="label">Dúvidas</span>
+          <h2>Antes de <span class="hl">escolher.</span></h2>
+          <p class="lede">Não achou sua resposta? A Lari responde pelo Direct.</p>
+          <a class="btn btn-line js-talk" href="https://ig.me/m/burguesinhabylari" target="_blank" rel="noopener" style="justify-self:start">Tirar dúvida com a Lari</a>
+        </div>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Posso comprar pela internet?</summary>
+          <p>Pode. A loja online funciona 24 horas: escolha a peça, calcule o frete pelo CEP e finalize a compra.</p>
+        </details>
+        <details>
+          <summary>Parcela em quantas vezes?</summary>
+          <p>Em até 12x no cartão. O valor de cada parcela aparece na página do produto.</p>
+        </details>
+        <details>
+          <summary>Fico em dúvida no tamanho. E agora?</summary>
+          <p>Chame a Lari no Direct antes de comprar: ela ajuda a escolher o tamanho e a montar o look.</p>
+        </details>
+        <details>
+          <summary>Tem loja física em Alfenas?</summary>
+          <p>Tem. A Burguesinha fica em Alfenas, MG. Chame no Direct para receber a localização e o horário.</p>
+        </details>
+        <details>
+          <summary>Tem moda infantil?</summary>
+          <p>Confira o destaque “Infantil” no Instagram da Burguesinha para ver as peças disponíveis.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final">
+    <div class="wrap">
+      <span class="label">Seu próximo look está te esperando</span>
+      <h2>Vista sua identidade. Seja <span class="hl">Burguesinha.</span></h2>
+      <p>Compre online em até 12x ou fale com a Lari para montar o look perfeito.</p>
+      <div class="actions">
+        <a class="btn btn-butter" href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/" target="_blank" rel="noopener">Comprar na loja online <span class="arr" aria-hidden="true">→</span></a>
+        <a class="btn btn-line js-talk" href="https://ig.me/m/burguesinhabylari" target="_blank" rel="noopener">Falar com a Lari</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-brand">
+      <img src="assets/logo.png" alt="" onerror="this.remove()">
+      <div>
+        <strong>Burguesinha</strong>
+        <span>Moda com propósito · Alfenas – MG</span>
+      </div>
+    </div>
+    <a class="foot-ig" href="https://www.instagram.com/burguesinhabylari/" target="_blank" rel="noopener" aria-label="Instagram @burguesinhabylari">
+      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+        <circle cx="12" cy="12" r="4.2"></circle>
+        <circle cx="17.4" cy="6.6" r=".6" fill="currentColor" stroke="none"></circle>
+      </svg>
+      <span>@burguesinhabylari</span>
+    </a>
+    <p class="foot-legal">
+      <span>© 2026 · Todos os direitos reservados</span>
+      <span>Por Mesquita SaaS</span>
+    </p>
+  </div>
+</footer>
+
+<script>
+  // WhatsApp da Lari (DDI+DDD+número, ex.: "5535999999999"). Vazio = botões "Falar com a Lari" abrem o Direct.
+  const WHATSAPP = "";
+  const STORE = "https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/";
+
+  const LOOKS = {
+    trabalho: {
+      label: "Seu look para o trabalho", title: "Alfaiataria que fala por você.",
+      text: "Conjuntos coordenados e calças de caimento impecável, com uma parte de cima que muda o look da reunião para o happy hour.",
+      cats: [["Conjuntos", "conjuntos"], ["Calças", "calcas"], ["Parte de cima", "parte-de-cima"]],
+      pick: ["Conjunto Clara · R$ 180,00", "produtos/conjunto-clara/"]
+    },
+    jantar: {
+      label: "Seu look para o jantar", title: "Charme na medida certa.",
+      text: "Um vestido que valoriza sem esforço e um lenço ou acessório para dar o toque final.",
+      cats: [["Vestidos", "vestidos"], ["Lenços e acessórios", "lencos"]],
+      pick: null
+    },
+    passeio: {
+      label: "Seu look de fim de semana", title: "Leve, prático e cheio de estilo.",
+      text: "Macacões que resolvem o look numa peça só, bermudas e saias para dias de sol.",
+      cats: [["Macacões", "macacoes"], ["Bermudas e saias", "bermudas-e-saias"], ["Parte de cima", "parte-de-cima"]],
+      pick: ["Macacão Elisa · R$ 150,00", "produtos/macacao-elisa/"]
+    },
+    evento: {
+      label: "Seu look para o evento", title: "Para ser lembrada.",
+      text: "Vestidos e macacões que chegam antes de você, finalizados com acessórios à altura da ocasião.",
+      cats: [["Vestidos", "vestidos"], ["Macacões", "macacoes"], ["Lenços e acessórios", "lencos"]],
+      pick: null
+    }
+  };
+
+  const $ = (id) => document.getElementById(id);
+
+  function showLook(key) {
+    const l = LOOKS[key];
+    $("look-label").textContent = l.label;
+    $("look-title").textContent = l.title;
+    $("look-text").textContent = l.text;
+    $("look-list").innerHTML = l.cats.map(([name, slug]) =>
+      `<li><a href="${STORE}${slug}/" target="_blank" rel="noopener">${name} <span>Ver peças →</span></a></li>`).join("");
+    $("look-pick").hidden = !l.pick;
+    if (l.pick) { $("pick-name").textContent = l.pick[0]; $("pick-link").href = STORE + l.pick[1]; }
+  }
+
+  $("finder").addEventListener("change", (e) => showLook(e.target.value));
+  showLook("trabalho");
+
+  if (WHATSAPP) {
+    const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Oi, Lari! Vim pelo site da Burguesinha e quero ajuda para escolher meu look.")}`;
+    document.querySelectorAll(".js-talk").forEach(a => a.href = url);
+  }
+</script>
+
+</body>
+</html>

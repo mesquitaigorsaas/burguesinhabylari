@@ -72,9 +72,9 @@
   header.site nav.links a { color: #CDBFB3; }
   header.site nav.links a:hover { color: #FFFFFF; }
   header.site .btn { background: var(--noir); color: #2F2A2A; }
-  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .8rem; }
+  header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .5rem; }
   .brand { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; }
-  .brand img { height: 52px; width: auto; }
+  .brand img { height: 76px; width: auto; }
   .brand img + span { display: none; }
   .brand span { font-family: var(--display); font-size: 1.55rem; line-height: 1; }
   .brand small { display: block; font-family: var(--body); font-size: .6rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); margin-top: .2rem; }
@@ -216,6 +216,12 @@
   .foot-ig:hover svg { transform: scale(1.08); }
   .foot-legal { flex-basis: 100%; display: flex; flex-wrap: wrap; gap: .3rem 0; padding-top: 1.2rem; border-top: 1px solid var(--line); }
   .foot-legal > * + *::before { content: "·"; margin-inline: .7em; color: var(--taupe); }
+  /* Rodapé preto, como o cabeçalho, para a logo dourada aparecer */
+  footer { background: #000000; border-top: 0; color: #CDBFB3; }
+  footer .foot-brand img { height: 88px; }
+  footer .foot-brand strong, footer .foot-ig { color: #F6EDE6; }
+  footer .foot-ig svg { color: #DDA487; }
+  footer .foot-legal { border-top-color: #2E2828; }
 
   @media (max-width: 960px) {
     nav.links { display: none; }
@@ -234,6 +240,8 @@
     .sticker { width: 96px; font-size: .68rem; }
     .sticker b { font-size: 1.3rem; }
     .index a { grid-template-columns: 1fr; gap: .2rem; }
+    .brand img { height: 60px; }
+    footer .foot-brand img { height: 72px; }
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }

@@ -19,17 +19,17 @@
     /* Cores tiradas da fachada da loja: ParedeDeCima (fundo) e ParedeVitrine (faixas) */
     color-scheme: light;
     --bg: #C8B9A8;
-    --surface: #E3D9CF;
-    --ink: #2B2424;
+    --surface: #EFE8E1;
+    --ink: #2F2A2A;
     --muted: #55433F;
     --line: #B09F8E;
-    --taupe: #A89582;
-    --taupe-soft: #DCCFC2;
+    --taupe: #B78A8F;
+    --taupe-soft: #F4EFEA;
     --butter: #DDB04A;
     --btn: #000000;
     --btn-ink: #F6EDE6;
     --noir: #DDA487;
-    --noir-ink: #2B2424;
+    --noir-ink: #2F2A2A;
     --noir-muted: #553A31;
     --header: #000000;
     --header-ink: #F6EDE6;
@@ -57,7 +57,7 @@
   .btn-solid:hover { transform: translateY(-2px); }
   .btn-line { border-color: var(--ink); color: var(--ink); }
   .btn-line:hover { background: var(--ink); color: var(--bg); }
-  .btn-butter { background: var(--butter); color: #2B2424; }
+  .btn-butter { background: var(--butter); color: #2F2A2A; }
   .btn-butter:hover { transform: translateY(-2px); }
   .btn .arr { transition: transform .2s ease; }
   .btn:hover .arr { transform: translateX(4px); }
@@ -71,7 +71,7 @@
   header.site .brand small { color: #CDBFB3; }
   header.site nav.links a { color: #CDBFB3; }
   header.site nav.links a:hover { color: #FFFFFF; }
-  header.site .btn { background: var(--noir); color: #2B2424; }
+  header.site .btn { background: var(--noir); color: #2F2A2A; }
   header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .8rem; }
   .brand { display: inline-flex; align-items: center; gap: .65rem; text-decoration: none; }
   .brand img { height: 52px; width: auto; }
@@ -91,16 +91,16 @@
   .facts li { font-size: .85rem; font-weight: 600; padding: .5em .95em; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
 
   .medal-wrap { position: relative; justify-self: center; width: min(100%, 440px); aspect-ratio: 1; }
-  .medal { position: absolute; inset: 6%; border-radius: 50%; background: #000000; color: #FBF3EF; display: grid; place-items: center; box-shadow: var(--shadow); outline: 1px solid var(--taupe); outline-offset: 10px; }
+  .medal { position: absolute; inset: 6%; border-radius: 50%; background: #000000; color: #F4EFEA; display: grid; place-items: center; box-shadow: var(--shadow); outline: 1px solid var(--taupe); outline-offset: 10px; }
   .medal .ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 40s linear infinite; }
-  .medal .ring text { fill: #F1D9D0; font: 700 9.5px var(--body); letter-spacing: 2.6px; }
+  .medal .ring text { fill: #F4EFEA; font: 700 9.5px var(--body); letter-spacing: 2.6px; }
   .medal .core { text-align: center; display: grid; gap: .2rem; justify-items: center; }
   .medal .core .medal-logo { width: 64%; height: auto; }
   .medal .core .medal-logo ~ * { display: none; }
   .medal .core b { font-family: var(--display); font-weight: 400; font-size: clamp(4.5rem, 11vw, 7.5rem); line-height: .9; }
   .medal .core span { font-family: var(--display); font-size: clamp(1.4rem, 3vw, 2rem); }
   .medal .core small { font-size: .62rem; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; color: #C9AFA9; }
-  .sticker { position: absolute; right: 0; top: 8%; width: 118px; aspect-ratio: 1; border-radius: 50%; background: var(--butter); color: #2B2424; display: grid; place-items: center; text-align: center; font-weight: 700; font-size: .78rem; line-height: 1.2; transform: rotate(12deg); box-shadow: var(--shadow); padding: 1rem; }
+  .sticker { position: absolute; right: 0; top: 8%; width: 118px; aspect-ratio: 1; border-radius: 50%; background: var(--butter); color: #2F2A2A; display: grid; place-items: center; text-align: center; font-weight: 700; font-size: .78rem; line-height: 1.2; transform: rotate(12deg); box-shadow: var(--shadow); padding: 1rem; }
   .sticker b { display: block; font-family: var(--display); font-weight: 400; font-size: 1.6rem; line-height: 1; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -110,11 +110,11 @@
 
   /* Hang tags */
   .tags { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(1rem, 2.5vw, 2rem); padding-top: 2.5rem; }
-  .tag { position: relative; display: grid; gap: .5rem; align-content: start; text-decoration: none; color: #2B2424; background: #F1D9D0; border-radius: 14px 14px 10px 10px; padding: 3.2rem 1.4rem 1.5rem; transform: rotate(var(--r, 0deg)); transform-origin: 50% -2.5rem; transition: transform .35s ease; }
+  .tag { position: relative; display: grid; gap: .5rem; align-content: start; text-decoration: none; color: #2F2A2A; background: #F4EFEA; border-radius: 14px 14px 10px 10px; padding: 3.2rem 1.4rem 1.5rem; transform: rotate(var(--r, 0deg)); transform-origin: 50% -2.5rem; transition: transform .35s ease; }
   .tag:nth-child(1) { --r: -2deg; }
-  .tag:nth-child(2) { --r: 1.5deg; background: var(--noir); color: #2B2424; }
+  .tag:nth-child(2) { --r: 1.5deg; background: var(--noir); color: #2F2A2A; }
   .tag:nth-child(3) { --r: -1deg; background: var(--butter); }
-  .tag:nth-child(4) { --r: 2deg; background: var(--taupe); color: #2B2424; }
+  .tag:nth-child(4) { --r: 2deg; background: var(--taupe); color: #2F2A2A; }
   .tag:hover { transform: rotate(0deg) translateY(-4px); }
   .tag::before { content: ""; position: absolute; top: 1.1rem; left: 50%; width: 16px; height: 16px; margin-left: -8px; border-radius: 50%; background: var(--bg); box-shadow: inset 0 1px 2px rgba(0,0,0,.25); }
   .tag::after { content: ""; position: absolute; left: 50%; bottom: calc(100% - 1.6rem); width: 1.5px; height: 3.2rem; background: var(--taupe); }
@@ -129,7 +129,7 @@
   .finder-band .label { color: var(--noir-muted); }
   .finder-band .lede { color: var(--noir-muted); }
   .finder { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
-  .finder h2 .hl { color: #2B2424; }
+  .finder h2 .hl { color: #2F2A2A; }
   .finder-band .hl, .final .hl { background: linear-gradient(transparent 60%, #F6EDE6 60%, #F6EDE6 92%, transparent 92%); }
   .final .btn-butter { background: #000000; color: #F6EDE6; }
   .chips { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin-top: 2rem; }
@@ -138,10 +138,10 @@
   .chip span b { font-family: var(--display); font-weight: 400; font-size: 1.35rem; line-height: 1.1; }
   .chip span small { font-size: .8rem; color: var(--noir-muted); }
   .chip span:hover { border-color: var(--taupe); }
-  .chip input:checked + span { background: var(--butter); border-color: var(--butter); color: #2B2424; }
+  .chip input:checked + span { background: var(--butter); border-color: var(--butter); color: #2F2A2A; }
   .chip input:checked + span small { color: #5A4643; }
   .chip input:focus-visible + span { outline: 2px solid var(--butter); outline-offset: 3px; }
-  .look { background: #FBF3EF; color: #2B2424; border-radius: 20px; padding: clamp(1.5rem, 3vw, 2.4rem); display: grid; gap: 1.2rem; }
+  .look { background: #F4EFEA; color: #2F2A2A; border-radius: 20px; padding: clamp(1.5rem, 3vw, 2.4rem); display: grid; gap: 1.2rem; }
   .look .label { color: #7A5F5B; }
   .look h3 { font-size: clamp(2rem, 4vw, 2.8rem); }
   .look p { color: #5A4643; }
@@ -149,10 +149,10 @@
   .look li a { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid #EBD8D0; text-decoration: none; font-weight: 600; }
   .look li a:hover { color: #7A5F5B; }
   .look li a span { font-size: .8rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #7A5F5B; }
-  .look .pick { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; background: #F1D9D0; border-radius: 12px; padding: .9rem 1.1rem; }
+  .look .pick { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; background: #C8B9A8; border-radius: 12px; padding: .9rem 1.1rem; }
   .look .pick b { font-family: var(--display); font-weight: 400; font-size: 1.3rem; }
   .look .pick[hidden] { display: none; }
-  .look .btn-solid { background: #2B2424; color: #FBF3EF; }
+  .look .btn-solid { background: #2F2A2A; color: #F4EFEA; }
 
   /* Category index */
   .index { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--ink); }
@@ -163,21 +163,21 @@
   .index a:hover span { color: var(--ink); }
 
   /* Manifesto */
-  .manifesto { background: var(--taupe); color: #2B2424; }
+  .manifesto { background: var(--taupe); color: #2F2A2A; }
   .manifesto .wrap { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-block: clamp(4rem, 8vw, 6rem); }
   .manifesto .label { color: #3A2C2B; }
   .manifesto h2 { font-size: clamp(2.4rem, 5.6vw, 4.4rem); margin-top: .8rem; }
   .manifesto p { max-width: 50ch; margin-top: 1.2rem; color: #3A2C2B; font-size: 1.05rem; }
   .highlights { display: flex; flex-wrap: wrap; gap: .6rem; }
-  .highlights a { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; background: #FBF3EF; color: #2B2424; border-radius: 999px; padding: .65em 1.1em; font-weight: 600; font-size: .9rem; transition: background-color .2s; }
-  .highlights a::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--butter); box-shadow: 0 0 0 1.5px #2B2424; }
+  .highlights a { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; background: #F4EFEA; color: #2F2A2A; border-radius: 999px; padding: .65em 1.1em; font-weight: 600; font-size: .9rem; transition: background-color .2s; }
+  .highlights a::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--butter); box-shadow: 0 0 0 1.5px #2F2A2A; }
   .highlights a:hover { background: var(--butter); }
-  .manifesto .btn-solid { background: #2B2424; color: #FBF3EF; margin-top: 1.6rem; }
+  .manifesto .btn-solid { background: #2F2A2A; color: #F4EFEA; margin-top: 1.6rem; }
 
   /* How to buy */
   .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; counter-reset: s; }
   .steps li { counter-increment: s; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 1.8rem; display: grid; gap: .6rem; align-content: start; }
-  .steps li::before { content: counter(s); font-family: var(--display); font-size: 1.4rem; width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center; background: var(--butter); color: #2B2424; }
+  .steps li::before { content: counter(s); font-family: var(--display); font-size: 1.4rem; width: 2.6rem; height: 2.6rem; border-radius: 50%; display: grid; place-items: center; background: var(--butter); color: #2F2A2A; }
   .steps h3 { font-size: 1.6rem; }
   .steps p { color: var(--muted); }
 
@@ -188,7 +188,7 @@
   .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding-block: 1.2rem; font-weight: 700; font-size: 1.05rem; }
   .faq summary::-webkit-details-marker { display: none; }
   .faq summary::after { content: "+"; flex: none; width: 1.8rem; height: 1.8rem; border-radius: 50%; display: grid; place-items: center; background: var(--taupe-soft); color: var(--ink); font-weight: 500; transition: transform .25s, background-color .25s; }
-  .faq details[open] summary::after { transform: rotate(45deg); background: var(--butter); color: #2B2424; }
+  .faq details[open] summary::after { transform: rotate(45deg); background: var(--butter); color: #2F2A2A; }
   .faq details p { color: var(--muted); padding-bottom: 1.3rem; max-width: 60ch; }
 
   /* Final CTA */
@@ -196,7 +196,7 @@
   .final .wrap { display: grid; justify-items: center; text-align: center; gap: 1.3rem; padding-block: clamp(4rem, 9vw, 6.5rem); }
   .final .label { color: var(--noir-muted); }
   .final h2 { font-size: clamp(2.8rem, 7vw, 5.4rem); }
-  .final h2 .hl { color: #2B2424; }
+  .final h2 .hl { color: #2F2A2A; }
   .final p { color: var(--noir-muted); max-width: 46ch; }
   .final .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: .5rem; }
   .final .btn-line { border-color: var(--noir-ink); color: var(--noir-ink); }

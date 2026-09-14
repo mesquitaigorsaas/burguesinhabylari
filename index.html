@@ -82,6 +82,24 @@
   nav.links a { text-decoration: none; color: var(--muted); }
   nav.links a:hover { color: var(--ink); }
   header .btn { padding: .85em 1.3em; font-size: .82rem; }
+  .header-actions { display: flex; align-items: center; gap: .6rem; }
+  section[id] { scroll-margin-top: 96px; }
+
+  /* Menu hambúrguer (celular e tablet) */
+  .menu-toggle { display: none; width: 46px; height: 46px; border-radius: 50%; border: 1px solid #3A3333; background: transparent; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 5px; padding: 0; }
+  .menu-toggle span { display: block; width: 20px; height: 1.5px; background: #F6EDE6; transition: transform .25s ease, opacity .25s ease; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .menu-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+  .menu-toggle:focus-visible { outline-color: #DDA487; }
+  .mobile-menu { background: #000000; border-top: 1px solid #2E2828; }
+  .mobile-menu[hidden] { display: none; }
+  .mobile-menu .wrap { display: grid; padding-block: .3rem 1.4rem; }
+  .mobile-menu a { display: flex; justify-content: space-between; align-items: center; padding: .85rem 0; border-bottom: 1px solid #2E2828; font-family: var(--display); font-size: 1.9rem; line-height: 1.1; color: #F6EDE6; text-decoration: none; }
+  .mobile-menu a::after { content: "→"; font-family: var(--body); font-size: 1.1rem; color: #DDA487; transition: transform .2s ease; }
+  .mobile-menu a:hover::after, .mobile-menu a:focus-visible::after { transform: translateX(4px); }
+  @media (max-width: 960px) { .menu-toggle { display: inline-flex; } }
+  @media (min-width: 961px) { .mobile-menu { display: none !important; } }
 
   /* Hero */
   .hero .wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-block: clamp(3rem, 7vw, 5.5rem); }
@@ -271,8 +289,21 @@
       <a href="#categorias">Categorias</a>
       <a href="#bgirls">B.Girls</a>
     </nav>
-    <a class="btn btn-solid" href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/" target="_blank" rel="noopener">Comprar online</a>
+    <div class="header-actions">
+      <a class="btn btn-solid" href="https://burguesinhabylarissalopes.lojavirtualnuvem.com.br/" target="_blank" rel="noopener">Comprar online</a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Menu" hidden>
+    <div class="wrap">
+      <a href="#vitrine">Vitrine</a>
+      <a href="#provador">Provador</a>
+      <a href="#categorias">Categorias</a>
+      <a href="#bgirls">B.Girls</a>
+    </div>
+  </nav>
 </header>
 
 <main id="topo">
@@ -556,6 +587,16 @@
 
   $("finder").addEventListener("change", (e) => showLook(e.target.value));
   showLook("trabalho");
+
+  const menuBtn = $("menu-toggle"), menu = $("mobile-menu");
+  function setMenu(open) {
+    menu.hidden = !open;
+    menuBtn.setAttribute("aria-expanded", String(open));
+    menuBtn.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+  }
+  menuBtn.addEventListener("click", () => setMenu(menu.hidden));
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !menu.hidden) { setMenu(false); menuBtn.focus(); } });
 
   if (WHATSAPP) {
     const url = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Oi, Lari! Vim pelo site da Burguesinha e quero ajuda para escolher meu look.")}`;
